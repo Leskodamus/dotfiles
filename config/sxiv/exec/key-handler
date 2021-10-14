@@ -1,0 +1,14 @@
+#!/bin/sh
+
+while read file
+do
+	echo "file: $file"
+	case "$1" in
+		"C-d")
+			rm "$file" ;;
+		"C-c")
+			xclip -selection clipboard "$file" -t image/png ;;
+		"C-w")
+			xwallpaper --stretch "$file" ;;
+	esac
+done

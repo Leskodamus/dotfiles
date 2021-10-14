@@ -1,0 +1,22 @@
+! Colors	   'bg'		  'border' 'seperator'
+rofi.color-window: argb:fa141413, #ff8300, #1d1f21
+!		   'bg'		  'fg'	   'altbg'	  'hlbg'	'hlfg'
+rofi.color-normal: argb:031d1f21, #f3f4f5, argb:031d1f21, argb:031d1f21, #ffff00
+rofi.color-urgent: argb:031d1f21, #f3f4f5, argb:bc303541, argb:031d1f21, #9575cd
+rofi.color-active: argb:031d1f21, #ff8300, argb:031d1f21, argb:031d1f21, #ffff00 
+
+! Settings
+rofi.modi: combi
+rofi.hide-scrollbar: true
+rofi.color-enabled: true
+rofi.font: IBMPlexMono 11
+rofi.width: 35
+rofi.lines: 8
+rofi.padding: 30
+rofi.columns: 1
+rofi.line-margin: 5
+rofi.bw: 0
+rofi.seperator-style: none
+rofi.display-drun:run
+rofi.display-window:window
+rofi.display-combi:search

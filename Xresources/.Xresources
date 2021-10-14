@@ -1,0 +1,5 @@
+Sxiv.foreground: #ffffff
+Sxiv.background: #000000
+Sxiv.font: IBMPlexMono-9
+
+dwm.selbordercolor: #ffff00
