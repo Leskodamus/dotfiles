@@ -1,15 +1,16 @@
-# Linux Dotfiles
+## Linux dotfiles for:
 
-- zsh
+- alacritty
+- dunst
 - dwm/autostart.sh
 - libinput-gestures
-- redshift
-- dunst
+- neovim
+- newsboat
 - picom
+- redshift
 - rofi
 - sxiv
 - tmux
-- neovim
-- alacritty
-- newsboat
+- xinit
 - Xresources
+- zsh
