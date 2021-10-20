@@ -76,8 +76,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovim/nvim-lspconfig'
 " Plug 'vim-syntastic/syntastic'
 Plug 'lervag/vimtex'
-Plug 'ixru/nvim-markdown'
 Plug 'andweeb/presence.nvim'
+Plug 'SidOfc/mkdx'
 call plug#end()
 
 " rust-analyzer for lspconfig

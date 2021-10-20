@@ -36,7 +36,7 @@ cursor:
 font:
   size: 8
   normal:
-    family: IBMPlexMono
+    family: "IBM Plex Mono"
     style: Regular
   bold:
     family: IBMPlexMono

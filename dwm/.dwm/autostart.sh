@@ -4,7 +4,7 @@
 prime-offload &
 dwmblocks &
 libinput-gestures-setup start &
-xwallpaper --zoom ~/cloud/Pictures/Wallpaper/wallhaven-j319dq.png &
+xwallpaper --zoom ~/cloud/Pictures/Wallpaper/freethemalloc.png &
 dunst &
 picom &
 redshift-gtk & 
