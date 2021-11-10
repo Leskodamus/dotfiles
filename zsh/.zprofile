@@ -1,5 +1,5 @@
 export PATH="$PATH:$HOME/.local/bin/"
-export JAVA_HOME="/usr/lib/jvm/java-16-openjdk/"
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk/"
 
 if [ -n "$DESKTOP_SESSION" ];then
     eval $(gnome-keyring-daemon --start)
