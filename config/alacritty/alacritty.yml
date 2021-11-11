@@ -34,7 +34,7 @@ cursor:
     blinking: on
 
 font:
-  size: 8
+  size: 11
   normal:
     family: "IBM Plex Mono"
     style: Regular
