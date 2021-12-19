@@ -72,8 +72,6 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	zsh-autosuggestions
-	zsh-syntax-highlighting
 )
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
@@ -117,10 +115,8 @@ alias nnn="nnn -e"
 alias pacman="sudo pacman"
 alias clipfile="xclip -sel c <"
 alias clipcmd="xclip -selection clipboard"
-alias scan="scanimage --format=png --mode Color --progress --device epkowa:net:10.0.0.251 --resolution 100 --output-file"
 alias cat="bat --paging=never --style=plain"
-alias exa="exa --icons"
-alias ls="exa --icons"
-alias ll="exa --icons -alg"
-alias l="exa --icons -lg"
-alias la="exa --icons -ag"
+alias ls="exa"
+alias ll="exa -alg"
+alias l="exa -lg"
+alias la="exa -ag"

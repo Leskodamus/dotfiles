@@ -1,7 +1,6 @@
 #!/bin/sh
 
 ~/cloud/Linux/scripts/battcheck start &
-prime-offload &
 dwmblocks &
 libinput-gestures-setup start &
 xwallpaper --zoom ~/cloud/Pictures/Wallpaper/freethemalloc.png &

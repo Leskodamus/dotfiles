@@ -76,7 +76,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovim/nvim-lspconfig'
 " Plug 'vim-syntastic/syntastic'
 Plug 'lervag/vimtex'
-Plug 'andweeb/presence.nvim'
+Plug 'andweeb/presence.nvim', {'branch': 'main'}
 Plug 'SidOfc/mkdx'
 call plug#end()
 
