@@ -1,6 +1,5 @@
 ## Linux dotfiles for:
 
-- alacritty
 - dunst
 - dwm/autostart.sh
 - libinput-gestures
