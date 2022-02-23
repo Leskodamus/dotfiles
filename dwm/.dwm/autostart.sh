@@ -9,8 +9,5 @@ picom &
 redshift-gtk & 
 udiskie -Asm nested &
 nm-applet &
-if [ `pidof owncloud ` ]; then
-	killall owncloud
-fi
-sleep 5
 owncloud &
+dropbox &
