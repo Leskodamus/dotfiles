@@ -31,6 +31,7 @@ set wrap "Wraplines"
 au FocusGained,BufEnter * checktime
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+set mouse=n
 
 " map leader key
 let mapleader = ","
