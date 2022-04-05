@@ -9,6 +9,6 @@ do
 		"C-c")
 			xclip -selection clipboard "$file" -t image/png ;;
 		"C-w")
-			xwallpaper --stretch "$file" ;;
+			xwallpaper --zoom "$file" ;;
 	esac
 done

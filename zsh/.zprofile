@@ -1,4 +1,4 @@
-export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$HOME/.local/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/java-17-openjdk/"
 export QT_QPA_PLATFORMTHEME=gtk2
 export NNN_PLUG='d:dragdrop'
