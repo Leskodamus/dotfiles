@@ -1,26 +1,30 @@
 set encoding=utf8
 set shell=/bin/zsh
-syntax enable
+syntax on 
 set title
 set number
 set ruler
 set relativenumber
+set cursorline
 set showcmd
 set showmatch
 set ignorecase
 set smartcase
-set smarttab
 filetype plugin on
 filetype indent on
 set wildmenu
 set incsearch
 set hlsearch
+set smarttab
+set softtabstop=4
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set clipboard=unnamedplus
 set history=500
 set cmdheight=1
 set autoread
+set noswapfile
 set magic
 set mat=2
 set lbr
@@ -56,6 +60,9 @@ nnoremap tl :tabprev<CR>
 nnoremap tn :tabnew<CR>
 nnoremap td  :tabclose<CR>
 
+" escape key
+:tnoremap <Esc> <C-\><C-n>
+
 " spell checking
 map <leader>ss :setlocal spell!<cr>
 
@@ -83,9 +90,6 @@ call plug#end()
 lua << EOF
 require'lspconfig'.rust_analyzer.setup{}
 EOF
-
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " nvim-markdown
 let g:vim_markdown_conceal = 0
