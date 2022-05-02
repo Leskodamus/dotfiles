@@ -58,10 +58,10 @@ nnoremap <leader>5 5gt
 nnoremap th :tabnext<CR>
 nnoremap tl :tabprev<CR>
 nnoremap tn :tabnew<CR>
-nnoremap td  :tabclose<CR>
+nnoremap td :tabclose<CR>
 
 " escape key
-:tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
 
 " spell checking
 map <leader>ss :setlocal spell!<cr>
@@ -80,7 +80,6 @@ Plug 'tpope/vim-commentary'
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovim/nvim-lspconfig'
-" Plug 'vim-syntastic/syntastic'
 Plug 'lervag/vimtex'
 Plug 'andweeb/presence.nvim', {'branch': 'main'}
 Plug 'SidOfc/mkdx'
@@ -93,15 +92,6 @@ EOF
 
 " nvim-markdown
 let g:vim_markdown_conceal = 0
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
 
 " coc configuration 
 highlight CocFloating ctermbg=0

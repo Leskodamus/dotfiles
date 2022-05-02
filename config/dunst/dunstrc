@@ -3,9 +3,13 @@ title = Dunst
 class = Dunst
 monitor = 0
 follow = mouse
-geometry = "300x5-25-25"
+width = 300
+height = 50 
+offset = 25x25
+origin = bottom-right
 indicate_hidden = yes
 shrink = yes
+notification_limit = 4
 
 transparency = 0
 separator_height = 2
