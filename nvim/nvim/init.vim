@@ -1,40 +1,42 @@
 set encoding=utf8
 set shell=/bin/zsh
 syntax on 
+set guicursor=
 set title
-set number
 set ruler
+set nu
 set relativenumber
-set cursorline
+set nohlsearch
 set showcmd
+set hidden
+set noerrorbells
 set showmatch
 set ignorecase
 set smartcase
-filetype plugin on
-filetype indent on
 set wildmenu
 set incsearch
 set hlsearch
-set smarttab
-set softtabstop=4
-set tabstop=4
+set tabstop=4 softtabstop=4
 set shiftwidth=4
+set smartindent
 set expandtab
+set nowrap
+set noswapfile
+set nobackup
 set clipboard=unnamedplus
+set scrolloff=8
 set history=500
 set cmdheight=1
 set autoread
-set noswapfile
 set magic
 set mat=2
 set lbr
 set tw=500
-set ai "Auto indent"
-set si "Smart indent"
-set wrap "Wraplines"
-au FocusGained,BufEnter * checktime
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+filetype plugin on
+filetype indent on
+au FocusGained,BufEnter * checktime
 
 " map leader key
 let mapleader = ","
