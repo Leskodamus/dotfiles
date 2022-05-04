@@ -2,7 +2,6 @@
 
 - dunst
 - dwm/autostart.sh
-- libinput-gestures
 - neovim
 - newsboat
 - picom
