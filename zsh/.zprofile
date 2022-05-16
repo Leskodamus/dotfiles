@@ -1,5 +1,5 @@
 export PATH="$HOME/.local/bin:$PATH"
-export JAVA_HOME="/usr/lib/jvm/java-17-openjdk/"
+export JAVA_HOME="/usr/lib/jvm/default/"
 export QT_QPA_PLATFORMTHEME=gtk2
 export NNN_PLUG='d:dragdrop'
 
