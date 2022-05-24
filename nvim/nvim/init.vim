@@ -20,7 +20,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set smartindent
 set expandtab
-set nowrap
+" set nowrap
 set noswapfile
 set nobackup
 set clipboard=unnamedplus
