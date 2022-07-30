@@ -103,3 +103,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias py="python"
+alias nnn="nnn -e"
+alias clipfile="xclip -sel c <"
+alias clipcmd="xclip -selection clipboard"
+alias cat="bat --paging=never --style=plain"
+alias ls="exa"
+alias ll="exa -alg"
+alias l="exa -lg"
+alias al="exa -ag"
+
