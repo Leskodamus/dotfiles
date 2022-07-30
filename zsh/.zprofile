@@ -1,13 +1,8 @@
-export PATH="$HOME/.local/bin:$HOME/.platformio/penv/bin:$PATH"
-export JAVA_HOME="/usr/lib/jvm/default/"
-export QT_QPA_PLATFORMTHEME=gtk2
+# nnn plugins
 export NNN_PLUG='d:dragdrop'
 
-if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
-
+# Start wm ("autologin")
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
       exec startx
 fi
+

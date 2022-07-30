@@ -1,12 +1,31 @@
 #!/bin/sh
-# stow to link dotfiles
-stow zsh/ --ignore=damus.zsh-theme -t ~/
-stow nvim/ -t ~/.config/
-stow config/ -t ~/.config/
-stow dwm/ -t ~/
-stow Xresources/ -t ~/
-stow xinit/ -t ~/
 
-# copy zsh theme to /usr/share/oh-my-zsh/custom/themes
-# stow not working with sudo 
-sudo ln -sf ~/cloud/Linux/dotfiles/zsh/damus.zsh-theme /usr/share/oh-my-zsh/custom/themes/damus.zsh-theme
+# zsh
+ln -isT $(pwd)/zsh/.zshrc $HOME/.zshrc
+ln -isT $(pwd)/zsh/.zprofile $HOME/.zprofile
+
+# link zsh theme to $ZSH_CUSTOM/themes
+ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+ln -isT $(pwd)/zsh/damus.zsh-theme $ZSH_CUSTOM/themes/damus.zsh-theme
+
+# nvim
+ln -isT $(pwd)/nvim/nvim $HOME/.config/nvim
+
+# config dir
+ln -isT $(pwd)/config/dunst $HOME/.config/dunst
+ln -isT $(pwd)/config/newsboat $HOME/.config/newsboat
+ln -isT $(pwd)/config/picom $HOME/.config/picom
+ln -isT $(pwd)/config/sxiv $HOME/.config/sxiv
+ln -isT $(pwd)/config/tmux $HOME/.config/tmux
+ln -isT $(pwd)/config/zathura $HOME/.config/zathura
+ln -isT $(pwd)/config/redshift.conf $HOME/.config/redshift.conf
+
+# xinit
+ln -isT $(pwd)/xinit/.xinitrc $HOME/.xinitrc
+
+# Xresources
+ln -isT $(pwd)/Xresources/.Xresources $HOME/.Xresources
+
+# dwm
+ln -isT $(pwd)/dwm $HOME/.dwm
+

@@ -1,17 +1,18 @@
+# Apply Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-# set WM to non-reparenting for java applications
-export _JAVA_AWT_WM_NONREPARENTING=1
+# Qt enable gtk use (for dark theme)
+export QT_QPA_PLATFORMTHEME=gtk2
 
-# apply correct qt theme
+# Apply correct qt theme
 export QT_QPA_PLATFORMTHEME=qt5ct
 
-# gpg and vi 
+# Set WM to non-reparenting for java applications
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# GPG and vi 
 export GPG_TTY="tty"
 
-# gnome-keyring and ssh
-eval $(gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK
-
-# start wm
+# Start wm
 exec dwm
+
