@@ -6,9 +6,10 @@
 - newsboat
 - picom
 - redshift
-- rofi
 - sxiv
 - tmux
 - xinit
 - Xresources
+- zathura
 - zsh
+
