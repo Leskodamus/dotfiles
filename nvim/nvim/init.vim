@@ -34,7 +34,7 @@ set lbr
 set tw=500
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-set list
+set nolist
 set lcs+=space:·
 filetype plugin on
 filetype indent on
