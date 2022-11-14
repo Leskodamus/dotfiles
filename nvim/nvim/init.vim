@@ -1,10 +1,10 @@
 set encoding=utf8
 set shell=/bin/zsh
 syntax on 
-set guicursor=
 set title
+set guicursor=
 set ruler
-set nu
+set number
 set relativenumber
 set nohlsearch
 set showcmd
@@ -21,6 +21,7 @@ set shiftwidth=4
 set smartindent
 set expandtab
 " set nowrap
+set autochdir
 set noswapfile
 set nobackup
 set clipboard=unnamedplus
@@ -43,15 +44,11 @@ au FocusGained,BufEnter * checktime
 " map leader key
 let mapleader = ","
 
+" escape key
+tnoremap <Esc> <C-\><C-n>
+
 " create new line in insert mode
 imap <C-o> <esc>o
-
-" fzf
-nnoremap <silent> <leader><space> :Files<CR>
-nnoremap <silent> <leader>? :History<CR>
-
-" coc jump to definition in new tab
-nmap <silent> gd :call CocAction('jumpDefinition', 'tab drop')<CR>
 
 " tabs
 nnoremap <leader>1 1gt
@@ -64,9 +61,6 @@ nnoremap tl :tabprev<CR>
 nnoremap tn :tabnew<CR>
 nnoremap td :tabclose<CR>
 
-" escape key
-tnoremap <Esc> <C-\><C-n>
-
 " spell checking
 map <leader>ss :setlocal spell!<cr>
 
@@ -75,23 +69,43 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " Plugins
 call plug#begin()
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/fzf.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-commentary' 
+Plug 'terrortylor/nvim-comment'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex'
-Plug 'andweeb/presence.nvim', {'branch': 'main'}
 Plug 'SidOfc/mkdx'
+Plug 'andweeb/presence.nvim'
 call plug#end()
+
+" lualine
+lua << END
+require('lualine').setup {
+    options = {
+        theme = 'gruvbox_dark',
+        icons_enabled = false,
+        component_separators = { left = ' ', right = ' '},
+        section_separators = { left = ' ', right = ' '},
+    },
+}
+END
+
+" comment
+lua require('nvim_comment').setup()
+
+" fzf
+nnoremap <silent> <leader><space> :Files<CR>
+nnoremap <silent> <leader>? :History<CR>
 
 " nvim-markdown
 let g:vim_markdown_conceal = 0
 
-" coc configuration 
+" colors (for coc)
 highlight CocFloating ctermbg=8
+
+" coc jump to definition in new tab
+nmap <silent> gd :call CocAction('jumpDefinition', 'tab drop')<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
