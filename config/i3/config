@@ -156,7 +156,7 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar and i3status
 bar {
-    status_command i3status | ~/.local/bin/get_i3_mod
+    status_command ~/.local/bin/i3status_custom
 	position bottom
 	tray_output primary
 	font pango:IbmPlex Mono 10
