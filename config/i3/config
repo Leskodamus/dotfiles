@@ -9,6 +9,7 @@ font pango:IbmPlexMono 8
 exec --no-startup-id dex --autostart --environment i3
 
 # Autostart applications
+exec --no-startup-id /bin/dunst
 exec --no-startup-id /bin/ckb-next -b
 exec --no-startup-id /bin/nm-applet
 exec --no-startup-id /bin/xwallpaper --maximize ~/wallpaper/procedural.jpg
@@ -19,6 +20,9 @@ floating_modifier $mod
 # Move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
+
+# Change mod key
+bindsym Control+Mod1+m exec ~/.local/bin/change_i3_mod
 
 # Start a terminal
 bindsym $mod+Return exec urxvt
@@ -57,10 +61,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Down move down
 
 # Split in horizontal orientation
-bindsym $mod+Mod4+h split h
+bindsym Mod1+Mod4+h split h
 
 # Split in vertical orientation
-bindsym $mod+Mod4+v split v
+bindsym Mod1+Mod4+v split v
 
 # Fullscreen mode
 bindsym $mod+f fullscreen toggle
@@ -153,6 +157,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar and i3status
 bar {
     status_command i3status
+    status_command ~/.local/bin/get_i3_mod
 	position bottom
 	tray_output primary
 	font pango:IbmPlex Mono 10
