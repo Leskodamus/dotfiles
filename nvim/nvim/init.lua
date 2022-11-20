@@ -1,10 +1,7 @@
 -- Settings
 
-vim.opt.encoding = 'utf-8'
-vim.opt.shell = '/bin/zsh'
 vim.opt.title = true
 vim.opt.guicursor = ''
-vim.opt.ruler = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4
@@ -13,23 +10,13 @@ vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
 vim.opt.expandtab = true
 vim.opt.hlsearch = false
-vim.opt.showcmd = true
-vim.opt.hidden = true
-vim.opt.errorbells = false
 vim.opt.showmatch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.wildmenu = true
-vim.opt.incsearch = true
-vim.opt.hlsearch = true
 vim.opt.autochdir = true
-vim.opt.swapfile = true
-vim.opt.backup = false
+vim.opt.swapfile = false
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.scrolloff = 4
-vim.opt.cmdheight = 1
-vim.opt.autoread = true
-vim.opt.magic = true
 vim.opt.matchtime = 2
 vim.opt.linebreak = true
 vim.opt.textwidth = 500
@@ -68,10 +55,13 @@ require('lualine').setup {
 
 -- Leader key for more combinations
 vim.g.mapleader = ','
+
 -- Enable escape key to exit terminal mode
 map('t', '<Esc>', '<C-\\><C-n>')
+
 -- Create new line in insert mode
 map('i', '<C-o>', '<Esc>o')
+
 -- Tab keys
 map('n', '<leader>1', '1gt')
 map('n', '<leader>2', '2gt')
@@ -82,8 +72,10 @@ map('n', 'th', ':tabprev<CR>')
 map('n', 'tl', ':tabnext<CR>')
 map('n', 'tn', ':tabnew<CR>')
 map('n', 'td', ':tabclose<CR>')
+
 -- Toggle spell check
 map('n', '<leader>ss', ':setlocal spell!<cr>')
+
 -- Open fzf menu
 map('n', '<leader><space>', ':Files<CR>', { silent = true })
 map('n', '<leader>?', ':History<CR>', { silent = true })
