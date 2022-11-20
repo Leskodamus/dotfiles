@@ -24,7 +24,7 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = true
 vim.opt.autochdir = true
 vim.opt.swapfile = true
-vim.opt.backup = true
+vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.scrolloff = 4
 vim.opt.cmdheight = 1
@@ -38,8 +38,7 @@ vim.opt.listchars.extends = "space:·"
 
 -- Keymaps
 
-vim.g.mapleader = ","
-
+-- Helper function to keybind
 function map(mode, lhs, rhs, opts)
     local options = { noremap = true }
     if opts then
@@ -48,8 +47,14 @@ function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, options)
 end
 
+-- Leader key for more combinations
+vim.g.mapleader = ","
+
+-- Enable escape key to exit terminal mode
 map("t", "<Esc>", "<C-\\><C-n>")
+-- Create new line in insert mode
 map("i", "<C-o>", "<Esc>o")
+-- Tab keys
 map("n", "<leader>1", "1gt")
 map("n", "<leader>2", "2gt")
 map("n", "<leader>3", "3gt")
@@ -59,22 +64,24 @@ map("n", "th", ":tabprev<CR>")
 map("n", "tl", ":tabnext<CR>")
 map("n", "tn", ":tabnew<CR>")
 map("n", "td", ":tabclose<CR>")
-map("n", "<leader>ss", ":setlocal spell!<cr>") 
+-- Toggle spell check
+map("n", "<leader>ss", ":setlocal spell!<cr>")
+-- Open fzf menu
 map("n", "<leader><space>", ":Files<CR>", { silent = true })
 map("n", "<leader>?", ":History<CR>", { silent = true })
 
 -- Plugins
 
-local Plug = vim.fn['plug#']
-vim.call('plug#begin')
-Plug('junegunn/fzf.vim')
-Plug('neoclide/coc.nvim')
-Plug('nvim-lualine/lualine.nvim')
-Plug('mg979/vim-visual-multi')
-Plug('terrortylor/nvim-comment')
-Plug('andweeb/presence.nvim')
-Plug('ethanholz/nvim-lastplace')
-vim.call('plug#end')
+require('paq') {
+    'savq/paq-nvim';
+    'junegunn/fzf.vim';
+    'nvim-lualine/lualine.nvim';
+    'mg979/vim-visual-multi';
+    'terrortylor/nvim-comment';
+    'andweeb/presence.nvim';
+    'ethanholz/nvim-lastplace';
+    {'neoclide/coc.nvim', branch = 'release'};
+}
 
 require'nvim-lastplace'.setup{}
 require'nvim_comment'.setup{}
