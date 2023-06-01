@@ -30,17 +30,20 @@ require 'utils'
 
 require('paq') {
     'savq/paq-nvim';
-    'junegunn/fzf.vim';
     'nvim-lualine/lualine.nvim';
     'mg979/vim-visual-multi';
     'terrortylor/nvim-comment';
     'andweeb/presence.nvim';
     'ethanholz/nvim-lastplace';
+    'nvim-lua/plenary.nvim';
     {'neoclide/coc.nvim', branch = 'release'};
+    {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'};
+    {'nvim-telescope/telescope.nvim', branch = '0.1.x'};
 }
 
 require'nvim-lastplace'.setup{}
 require'nvim_comment'.setup{}
+
 require('lualine').setup {
     options = {
         theme = 'gruvbox_dark',
@@ -48,6 +51,28 @@ require('lualine').setup {
         component_separators = { left = ' ', right = ' '},
         section_separators = { left = ' ', right = ' '},
     },
+}
+
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all" (the five listed parsers should always be installed)
+  ensure_installed = { "markdown", "javascript", "typescript", "c", "cpp", "rust", "go", "lua", "vim", "vimdoc", "query" },
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- Automatically install missing parsers when entering buffer
+  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+  auto_install = true,
+
+  highlight = {
+    enable = true,
+
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
 }
 
 -- Keymaps
@@ -76,8 +101,8 @@ map('n', 'td', ':tabclose<CR>')
 map('n', '<leader>ss', ':setlocal spell!<cr>')
 
 -- Open fzf menu
-map('n', '<leader><space>', ':Files<CR>', { silent = true })
-map('n', '<leader>?', ':History<CR>', { silent = true })
+map('n', '<leader><space>', ':Telescope find_files<CR>', { silent = true })
+map('n', '<leader>?', ':Telescope buffers<CR>', { silent = true })
 
 -- Keymaps for coc
 map('n', 'gd', ':call CocAction("jumpDefinition", "tab drop")<CR>', { silent = true })
