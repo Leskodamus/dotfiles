@@ -36,6 +36,7 @@ require('paq') {
     'andweeb/presence.nvim';
     'ethanholz/nvim-lastplace';
     'nvim-lua/plenary.nvim';
+    'kylechui/nvim-surround';
     {'neoclide/coc.nvim', branch = 'release'};
     {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'};
     {'nvim-telescope/telescope.nvim', branch = '0.1.x'};
@@ -43,6 +44,7 @@ require('paq') {
 
 require'nvim-lastplace'.setup{}
 require'nvim_comment'.setup{}
+require'nvim-surround'.setup{}
 
 require('lualine').setup {
     options = {
