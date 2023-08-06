@@ -21,6 +21,7 @@ vim.opt.linebreak = true
 vim.opt.textwidth = 500
 vim.opt.whichwrap.extends = '<,>,h,l'
 vim.opt.listchars.extends = 'space:·'
+vim.opt.splitbelow = true
 
 -- Load util functions
 
@@ -36,10 +37,10 @@ require('paq') {
     'andweeb/presence.nvim';
     'ethanholz/nvim-lastplace';
     'nvim-lua/plenary.nvim';
-    'kylechui/nvim-surround';
     {'neoclide/coc.nvim', branch = 'release'};
     {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'};
     {'nvim-telescope/telescope.nvim', branch = '0.1.x'};
+    'kylechui/nvim-surround';
 }
 
 require'nvim-lastplace'.setup{}
@@ -99,8 +100,11 @@ map('n', 'tl', ':tabnext<CR>')
 map('n', 'tn', ':tabnew<CR>')
 map('n', 'td', ':tabclose<CR>')
 
+-- Open terminal in a new horizontal window
+map('n', '<C-w>t', ':new|:term<ESC>i')
+
 -- Toggle spell check
-map('n', '<leader>ss', ':setlocal spell!<cr>')
+map('n', '<leader>ss', ':setlocal spell!<CR>')
 
 -- Open fzf menu
 map('n', '<leader><space>', ':Telescope find_files<CR>', { silent = true })
