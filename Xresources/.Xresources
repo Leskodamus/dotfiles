@@ -5,10 +5,9 @@ Xft.hintstyle: hintmedium
 
 Sxiv.foreground: #ffffff
 Sxiv.background: #000000
-Sxiv.font: IBMPlexMono-9
+Sxiv.font: IBMPlexMono-10
 
 URxvt.termName: rxvt-unicode
-URxvt.geometry: 400x400
 URxvt*depth: 32
 URxvt.transparent: false
 URxvt.font: xft:IBMPlexMono:pixelsize=16
