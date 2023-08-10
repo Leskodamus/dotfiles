@@ -84,3 +84,9 @@ alias clipfile="xclip -sel c <"
 alias clipcmd="xclip -selection clipboard"
 alias nnn="nnn -e"
 
+# Clear screen as a workaround fix when using urxvt with zsh
+# Problem: cursor is put vertically centered upon opening terminal
+if [[ `ps ho command $(ps ho ppid $$)` == 'urxvt' ]]; then
+  clear
+fi
+
