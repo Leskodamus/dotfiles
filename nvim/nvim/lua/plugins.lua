@@ -7,7 +7,8 @@ require('paq') {
     {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'};
     {'nvim-telescope/telescope.nvim', branch = '0.1.x'};
     'kylechui/nvim-surround';
-    "blazkowolf/gruber-darker.nvim";
+    "ellisonleao/gruvbox.nvim";
+    'nvim-lualine/lualine.nvim';
     -- LSP Support
     {'VonHeikemen/lsp-zero.nvim', branch = 'v2.x'};
     'neovim/nvim-lspconfig';
@@ -20,7 +21,17 @@ require('paq') {
 }
 
 -- Colorscheme
-vim.cmd.colorscheme("gruber-darker")
+vim.o.background = "dark" -- or "light"
+vim.cmd([[colorscheme gruvbox]])
+
+require('lualine').setup {
+	options = {
+		theme = "gruvbox_dark",
+        icons_enabled = false,
+        component_separators = { left = ' ', right = ' '},
+        section_separators = { left = ' ', right = ' '},
+	}
+}
 
 require'nvim-lastplace'.setup{}
 require'nvim_comment'.setup{}
