@@ -32,7 +32,6 @@ require 'utils'
 require('paq') {
     'savq/paq-nvim';
     'nvim-lualine/lualine.nvim';
-    'mg979/vim-visual-multi';
     'terrortylor/nvim-comment';
     'andweeb/presence.nvim';
     'ethanholz/nvim-lastplace';
@@ -46,7 +45,20 @@ require('paq') {
 require'nvim-lastplace'.setup{}
 require'nvim_comment'.setup{}
 require'nvim-surround'.setup{}
--- require'nvim-autopairs'.setup{}
+
+--[[ nvim-surround keybinds
+
+    Old text                    Command         New text
+--------------------------------------------------------------------------------
+    surr*ound_words             ysiw)           (surround_words)
+    *make strings               ys$"            "make strings"
+    [delete ar*ound me!]        ds]             delete around me!
+    remove <b>HTML t*ags</b>    dst             remove HTML tags
+    'change quot*es'            cs'"            "change quotes"
+    <b>or tag* types</b>        csth1<CR>       <h1>or tag types</h1>
+    delete(functi*on calls)     dsf             function calls
+
+--]]
 
 require('lualine').setup {
     options = {
