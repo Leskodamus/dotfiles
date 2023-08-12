@@ -46,6 +46,7 @@ require('paq') {
 require'nvim-lastplace'.setup{}
 require'nvim_comment'.setup{}
 require'nvim-surround'.setup{}
+-- require'nvim-autopairs'.setup{}
 
 require('lualine').setup {
     options = {
@@ -88,6 +89,12 @@ map('t', '<Esc>', '<C-\\><C-n>')
 
 -- Create new line in insert mode
 map('i', '<C-o>', '<Esc>o')
+
+-- Delete without copying
+map('x', '<leader>d', '"_d')
+
+-- Delete and paste but without overwriting copy register
+map('x', '<leader>p', '"_dP')
 
 -- Tab keys
 map('n', '<leader>1', '1gt')
