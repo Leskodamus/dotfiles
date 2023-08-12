@@ -1,6 +1,5 @@
 require('paq') {
     'savq/paq-nvim';
-    'nvim-lualine/lualine.nvim';
     'terrortylor/nvim-comment';
     'andweeb/presence.nvim';
     'ethanholz/nvim-lastplace';
@@ -41,15 +40,6 @@ remove <b>HTML t*ags</b>    dst             remove HTML tags
 delete(functi*on calls)     dsf             function calls
 
 --]]
-
-require('lualine').setup {
-    options = {
-        theme = 'gruvbox_dark',
-        icons_enabled = false,
-        component_separators = { left = ' ', right = ' '},
-        section_separators = { left = ' ', right = ' '},
-    },
-}
 
 require'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
