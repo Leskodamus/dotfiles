@@ -9,9 +9,9 @@ Sxiv.font: IBMPlexMono-10
 
 URxvt.termName: rxvt-unicode
 URxvt*depth: 32
-URxvt.transparent: false
-URxvt.font: xft:IBMPlexMono:pixelsize=16
-URxvt.scrollBar: false
+URxvt*transparent: false
+URxvt*font: xft:IBMPlexMono:pixelsize=16
+URxvt*scrollBar: false
 
 URxvt.perl-ext-common: default,resize-font,-confirm-paste
 
@@ -31,8 +31,9 @@ URxvt.keysym.Control-Right:  \033[1;5C
 
 ! gruvbox-dark theme
 ! hard contrast: *background: #1d2021
-URxvt*background: #282828
 ! soft contrast: *background: #32302f
+/* URxvt*background: #282828 */
+URxvt*background: #1d2021
 URxvt*foreground: #ebdbb2
 ! Black + DarkGrey
 URxvt*color0:  #282828
