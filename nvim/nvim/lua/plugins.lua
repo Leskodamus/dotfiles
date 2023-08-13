@@ -2,8 +2,8 @@ require('paq') {
     'savq/paq-nvim';
     'terrortylor/nvim-comment';
     'andweeb/presence.nvim';
-    'ethanholz/nvim-lastplace';
     'nvim-lua/plenary.nvim';
+    'ethanholz/nvim-lastplace';
     {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'};
     {'nvim-telescope/telescope.nvim', branch = '0.1.x'};
     'kylechui/nvim-surround';
@@ -21,6 +21,18 @@ require('paq') {
 }
 
 -- Colorscheme
+require("gruvbox").setup({
+    contrast = "hard",
+    undercurl = true,
+    underline = true,
+    strikethrough = true,
+    italic = {
+        strings = false,
+        comments = false,
+        operators = false,
+        folds = false,
+    },
+})
 vim.o.background = "dark" -- or "light"
 vim.cmd([[colorscheme gruvbox]])
 
@@ -33,8 +45,8 @@ require('lualine').setup {
 	}
 }
 
-require'nvim-lastplace'.setup{}
 require'nvim_comment'.setup{}
+require'nvim-lastplace'.setup{}
 
 require'nvim-surround'.setup{}
 
