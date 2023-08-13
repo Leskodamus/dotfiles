@@ -43,3 +43,7 @@ map('n', '<leader>ss', ':setlocal spell!<CR>')
 map('n', '<leader><space>', ':Telescope find_files<CR>', { silent = true })
 map('n', '<leader>?', ':Telescope buffers<CR>', { silent = true })
 
+-- Move line up/down
+map('n', '<A-j>', ':m +1<CR>', { silent = true })
+map('n', '<A-k>', ':m -2<CR>', { silent = true })
+
