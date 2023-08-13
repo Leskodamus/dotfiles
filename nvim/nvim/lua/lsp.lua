@@ -23,8 +23,7 @@ lsp.ensure_installed({
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
-    -- `Enter` key to confirm completion
-    ['<CR>'] = cmp.mapping.confirm({select = true}),
+    ['<CR>'] = cmp.mapping.confirm({select = false}),
     ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
     ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-Space>'] = cmp.mapping.complete(),
