@@ -20,5 +20,4 @@ vim.opt.textwidth = 500
 vim.opt.whichwrap.extends = '<,>,h,l'
 vim.opt.listchars.extends = 'space:·'
 vim.opt.splitbelow = true
-vim.opt.wrap = false
 
