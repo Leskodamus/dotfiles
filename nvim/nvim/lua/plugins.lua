@@ -10,14 +10,19 @@ require('paq') {
     "ellisonleao/gruvbox.nvim";
     'nvim-lualine/lualine.nvim';
     -- LSP Support
-    {'VonHeikemen/lsp-zero.nvim', branch = 'v2.x'};
+    {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'};
     'neovim/nvim-lspconfig';
     'williamboman/mason.nvim';
     'williamboman/mason-lspconfig.nvim';
     -- Autocompletion
     'hrsh7th/nvim-cmp';
     'hrsh7th/cmp-nvim-lsp';
-    'L3MON4D3/LuaSnip';
+    'hrsh7th/cmp-buffer';
+    'hrsh7th/cmp-path';
+    'hrsh7th/cmp-cmdline';
+    -- Snippets
+    'hrsh7th/cmp-vsnip';
+    'hrsh7th/vim-vsnip';
 }
 
 -- Colorscheme
@@ -45,10 +50,10 @@ require('lualine').setup {
 	}
 }
 
-require'nvim_comment'.setup{}
-require'nvim-lastplace'.setup{}
+require('nvim_comment').setup{}
+require('nvim-lastplace').setup{}
 
-require'nvim-surround'.setup{}
+require('nvim-surround').setup{}
 
 --[[ nvim-surround keybinds
 
@@ -64,7 +69,7 @@ delete(functi*on calls)     dsf             function calls
 
 --]]
 
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
     ensure_installed = { "markdown", "javascript", "typescript", "c", "cpp", "rust", "go", "lua", "vim", "vimdoc", "query", "html", "css", "json", "latex" },
 

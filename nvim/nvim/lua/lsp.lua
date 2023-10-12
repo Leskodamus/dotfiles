@@ -1,46 +1,10 @@
 local lsp = require('lsp-zero')
-lsp.preset("recommended")
 
--- LSP languages
-lsp.ensure_installed({
-    'rust_analyzer',
-    'clangd',
-    'cmake',
-    'asm_lsp',
-    'gopls',
-    'html',
-    'cssls',
-    'jsonls',
-    'tsserver',
-    'lua_ls',
-    'marksman',
-    'intelephense',
-    'pyright',
-    'sqlls'
-})
-
--- Keybinds for autocompletion
-local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<CR>'] = cmp.mapping.confirm({select = false}),
-    ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-Space>'] = cmp.mapping.complete(),
-})
-
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
-})
-
-lsp.set_preferences({
-    sign_icons = { }
-})
-
-lsp.nvim_workspace()
 lsp.on_attach(function(client, bufnr)
     local opts = {buffer = bufnr, remap = false}
+
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set("n", "gD", ":tab split<cr><cmd>lua vim.lsp.buf.definition()<cr>", opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
@@ -67,7 +31,57 @@ lsp.on_attach(function(client, bufnr)
     })
 end)
 
-lsp.setup()
+-- LSP languages
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        'rust_analyzer',
+        'clangd',
+        'cmake',
+        'asm_lsp',
+        'gopls',
+        'html',
+        'cssls',
+        'jsonls',
+        'tsserver',
+        'lua_ls',
+        'marksman',
+        'intelephense',
+        'pyright',
+        'sqlls',
+        'cmake'
+    },
+    handlers = {
+        lsp.default_setup,
+        lua_ls = function()
+            local lua_opts = lsp.nvim_lua_ls()
+            require('lspconfig').lua_ls.setup(lua_opts)
+        end,
+    },
+})
+
+-- Keybinds for autocompletion
+local cmp = require('cmp')
+local cmp_select = {behavior = cmp.SelectBehavior.Select}
+
+cmp.setup({
+    snippet = {
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+        end,
+    },
+    sources = {
+        {name = 'nvim_lsp'},
+        {name = 'vsnip'},
+    },
+    formatting = lsp.cmp_format(),
+    mapping = cmp.mapping.preset.insert({
+        ['<CR>'] = cmp.mapping.confirm({select = false}),
+        ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<C-Space>'] = cmp.mapping.complete(),
+    }),
+})
 
 vim.diagnostic.config({
     virtual_text = false
@@ -104,5 +118,5 @@ local function goto_definition(split_cmd)
     return handler
 end
 
-vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
+-- vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
 
