@@ -13,5 +13,5 @@ configuration {
     }
 }
 
-//@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
 @theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
+

@@ -12,3 +12,4 @@ do
 			xwallpaper --zoom "$file" ;;
 	esac
 done
+

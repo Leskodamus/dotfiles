@@ -1,3 +1,5 @@
+-- Plugins
+
 require('paq') {
     'savq/paq-nvim';
     'terrortylor/nvim-comment';
@@ -6,9 +8,15 @@ require('paq') {
     'ethanholz/nvim-lastplace';
     {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'};
     {'nvim-telescope/telescope.nvim', branch = '0.1.x'};
+    'nvim-telescope/telescope-file-browser.nvim';
     'kylechui/nvim-surround';
-    "ellisonleao/gruvbox.nvim";
+    'ellisonleao/gruvbox.nvim';
     'nvim-lualine/lualine.nvim';
+    'klen/nvim-test';
+    -- Neotree file browser
+    'nvim-neo-tree/neo-tree.nvim';
+    'MunifTanjim/nui.nvim';
+    'nvim-tree/nvim-web-devicons';
     -- LSP Support
     {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'};
     'neovim/nvim-lspconfig';
@@ -26,6 +34,7 @@ require('paq') {
 }
 
 -- Colorscheme
+--
 require("gruvbox").setup({
     contrast = "hard",
     undercurl = true,
@@ -38,8 +47,11 @@ require("gruvbox").setup({
         folds = false,
     },
 })
+
 vim.o.background = "dark" -- or "light"
 vim.cmd([[colorscheme gruvbox]])
+
+-- Status line
 
 require('lualine').setup {
 	options = {
@@ -50,8 +62,15 @@ require('lualine').setup {
 	}
 }
 
+-- Un/Comment code
+
 require('nvim_comment').setup{}
+
+-- Open file where left off (UNMAINTAINED PLUGIN!)
+
 require('nvim-lastplace').setup{}
+
+-- Add/Change surrounding words
 
 require('nvim-surround').setup{}
 
@@ -68,6 +87,8 @@ remove <b>HTML t*ags</b>    dst             remove HTML tags
 delete(functi*on calls)     dsf             function calls
 
 --]]
+
+-- Treesitter syntax highlighting
 
 require('nvim-treesitter.configs').setup {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
@@ -89,5 +110,18 @@ require('nvim-treesitter.configs').setup {
         -- Instead of true it can also be a list of languages
         additional_vim_regex_highlighting = false,
     },
+}
+
+-- Test plugin for unit tests and theirlike
+
+require('nvim-test').setup {
+    termOpts = {
+        direction = "vertical",
+        width = 50
+    },
+
+    runners = {
+        python = "nvim-test.runners.pyunit"
+    }
 }
 
