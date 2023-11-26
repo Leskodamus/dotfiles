@@ -6,13 +6,21 @@ require('paq') {
     'andweeb/presence.nvim';
     'nvim-lua/plenary.nvim';
     'ethanholz/nvim-lastplace';
-    {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'};
-    {'nvim-telescope/telescope.nvim', branch = '0.1.x'};
-    'nvim-telescope/telescope-file-browser.nvim';
+    {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'};
     'kylechui/nvim-surround';
     'ellisonleao/gruvbox.nvim';
     'nvim-lualine/lualine.nvim';
+    -- Fuzzy finder
+    {'nvim-telescope/telescope.nvim'};
+    'nvim-telescope/telescope-file-browser.nvim';
+    -- Code testing
     'klen/nvim-test';
+    -- Debugging tools
+    'mfussenegger/nvim-dap';
+    'mfussenegger/nvim-dap-python';
+    'rcarriga/nvim-dap-ui';
+    'folke/neodev.nvim';
+    'theHamsta/nvim-dap-virtual-text';
     -- Neotree file browser
     'nvim-neo-tree/neo-tree.nvim';
     'MunifTanjim/nui.nvim';
@@ -34,8 +42,8 @@ require('paq') {
 }
 
 -- Colorscheme
---
-require("gruvbox").setup({
+
+require('gruvbox').setup({
     contrast = "hard",
     undercurl = true,
     underline = true,
@@ -124,4 +132,27 @@ require('nvim-test').setup {
         python = "nvim-test.runners.pyunit"
     }
 }
+
+-- Debugging
+
+local dap, dapui = require('dap'), require('dapui')
+
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
+
+require("neodev").setup({
+    library = { plugins = { "nvim-dap-ui" }, types = true },
+    ...
+})
+
+require('dapui').setup()
+require('nvim-dap-virtual-text').setup()
+require('dap-python').setup()
 
