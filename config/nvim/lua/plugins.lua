@@ -10,6 +10,8 @@ require('paq') {
     'kylechui/nvim-surround';
     'ellisonleao/gruvbox.nvim';
     'nvim-lualine/lualine.nvim';
+    -- Github Copilot
+    'github/copilot.vim';
     -- Fuzzy finder
     {'nvim-telescope/telescope.nvim'};
     'nvim-telescope/telescope-file-browser.nvim';
