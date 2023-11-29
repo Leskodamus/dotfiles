@@ -1,15 +1,12 @@
-## Linux dotfiles for:
+Mostly Linux based configuration files.
+
+## Configuration files for:
 
 - dunst
-- dwm/autostart.sh
 - neovim
-- newsboat
-- picom
 - redshift
 - sxiv
 - tmux
-- xinit
 - Xresources
-- zathura
 - zsh
-
+- dwm/autostart.sh
