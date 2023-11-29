@@ -1,20 +1,22 @@
 #!/bin/sh
 
 # (oh-my) zsh
-ln -isT $(pwd)/zsh/.zshrc $HOME/.zshrc
-ln -isT $(pwd)/zsh/.zprofile $HOME/.zprofile
-ln -isT $(pwd)/zsh/damus.zsh-theme $ZSH_CUSTOM/themes/damus.zsh-theme
+cp $(pwd)/zsh/.zshrc $HOME/.zshrc
+cp $(pwd)/zsh/.zprofile $HOME/.zprofile
+cp $(pwd)/zsh/damus.zsh-theme $ZSH_CUSTOM/themes/damus.zsh-theme
 
 # Xresources
-ln -isT $(pwd)/Xresources/.Xresources $HOME/.Xresources
+cp $(pwd)/Xresources/.Xresources $HOME/.Xresources
 
 # dwm
-ln -isT $(pwd)/dwm $HOME/.dwm
+cp -r $(pwd)/dwm $HOME/.dwm
 
 # config dir
-ln -isT $(pwd)/config/nvim $HOME/.config/nvim
-ln -isT $(pwd)/config/dunst $HOME/.config/dunst
-ln -isT $(pwd)/config/sxiv $HOME/.config/sxiv
-ln -isT $(pwd)/config/tmux $HOME/.config/tmux
-ln -isT $(pwd)/config/redshift.conf $HOME/.config/redshift.conf
+cp -r $(pwd)/config/i3 $HOME/.config/
+cp -r $(pwd)/config/i3status $HOME/.config/
+cp -r $(pwd)/config/nvim $HOME/.config/
+cp -r $(pwd)/config/dunst $HOME/.config/
+cp -r $(pwd)/config/sxiv $HOME/.config/
+cp -r $(pwd)/config/tmux $HOME/.config/
+cp $(pwd)/config/redshift.conf $HOME/.config/redshift.conf
 
