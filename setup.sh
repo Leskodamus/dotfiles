@@ -18,5 +18,6 @@ cp -r $(pwd)/config/nvim $HOME/.config/
 cp -r $(pwd)/config/dunst $HOME/.config/
 cp -r $(pwd)/config/sxiv $HOME/.config/
 cp -r $(pwd)/config/tmux $HOME/.config/
+cp -r $(pwd)/config/kitty $HOME/.config/
 cp $(pwd)/config/redshift.conf $HOME/.config/redshift.conf
 
