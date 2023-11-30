@@ -1,3 +1,5 @@
+-- vim options
+
 vim.opt.title = true
 vim.opt.guicursor = ''
 vim.opt.number = true
@@ -21,3 +23,4 @@ vim.opt.whichwrap.extends = '<,>,h,l'
 vim.opt.listchars.extends = 'space:·'
 vim.opt.splitbelow = true
 vim.o.updatetime = 250
+
