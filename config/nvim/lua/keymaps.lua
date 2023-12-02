@@ -7,6 +7,21 @@ local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, options)
 end
 
+--[[
+n  Normal mode map. Defined using ':nmap' or ':nnoremap'.
+i  Insert mode map. Defined using ':imap' or ':inoremap'.
+v  Visual and select mode map. Defined using ':vmap' or ':vnoremap'.
+x  Visual mode map. Defined using ':xmap' or ':xnoremap'.
+s  Select mode map. Defined using ':smap' or ':snoremap'.
+c  Command-line mode map. Defined using ':cmap' or ':cnoremap'.
+o  Operator pending mode map. Defined using ':omap' or ':onoremap'.
+
+<Space>  Normal, Visual and operator pending mode map. Defined using
+         ':map' or ':noremap'.
+!  Insert and command-line mode map. Defined using 'map!' or
+   'noremap!'.
+--]]
+
 -- Leader key for more combinations
 vim.g.mapleader = ','
 
@@ -17,16 +32,15 @@ map('t', '<Esc>', '<C-\\><C-n>')
 map('i', '<C-o>', '<Esc>o')
 
 -- Delete without copying
-map('n', 'd', '"_d')
-map('x', 'd', '"_d')
+map('n', '<leader>d', '"_d')
+map('x', '<leader>d', '"_d')
 
--- Delete and copy 
-map('n', '<leader>d', 'd')
-map('x', '<leader>d', 'd')
+map('n', '<leader>x', '"_x')
+map('x', '<leader>x', '"_x')
 
--- Delete and paste with overwriting copy register
-map('n', '<leader>p', '"_dP')
-map('x', '<leader>p', '"_dP')
+-- Paste without yank
+map('x', 'p', '"_dP')
+map('x', '<leader>p', 'p')
 
 -- Tab keys
 map('n', '<leader>1', '1gt')

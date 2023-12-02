@@ -50,7 +50,7 @@ require('mason-lspconfig').setup({
         'intelephense',
         'pyright',
         'sqlls',
-        'cmake'
+        'cmake',
     },
     handlers = {
         lsp.default_setup,
