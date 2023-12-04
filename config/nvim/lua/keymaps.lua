@@ -67,6 +67,13 @@ map('n', '<leader>h', ':Telescope find_files  hidden=true<CR>', { silent = true 
 map('n', '<leader>/', ':Telescope live_grep<CR>', { silent = true })
 map('n', '<leader>?', ':Telescope buffers<CR>', { silent = true })
 
+-- Close buffer
+map('n', '<leader>q', ':bd<CR>', { silent = true })
+
+-- Switch buffers
+map('n', '<leader>h', ':bp<CR>', { silent = true })
+map('n', '<leader>l', ':bn<CR>', { silent = true })
+
 -- Move line up/down
 map('n', '<A-j>', ':m +1<CR>', { silent = true })
 map('n', '<A-k>', ':m -2<CR>', { silent = true })
