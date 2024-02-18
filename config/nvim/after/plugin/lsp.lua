@@ -92,3 +92,7 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
+-- go.nvim setup
+
+require('go').setup()
+
