@@ -31,6 +31,9 @@ require('paq') {
     'neovim/nvim-lspconfig';
     'williamboman/mason.nvim';
     'williamboman/mason-lspconfig.nvim';
+    -- Go lang impl completion
+    'ray-x/go.nvim';
+    'ray-x/guihua.lua';
     -- Autocompletion
     'hrsh7th/nvim-cmp';
     'hrsh7th/cmp-nvim-lsp';
