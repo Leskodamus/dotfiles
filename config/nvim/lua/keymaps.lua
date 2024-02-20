@@ -56,6 +56,9 @@ map('n', 'td', ':tabclose<CR>')
 -- Open terminal in a new horizontal window
 map('n', '<C-w>t', ':new|:term<ESC>i')
 
+-- Open terminal in a new tab
+map('n', '<leader>tt', ':tabnew|:term<ESC>i')
+
 -- Toggle spell check
 map('n', '<leader>ss', ':setlocal spell!<CR>')
 
