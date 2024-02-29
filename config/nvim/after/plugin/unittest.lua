@@ -2,11 +2,13 @@
 
 require('nvim-test').setup {
     termOpts = {
-        direction = "vertical",
-        width = 50
+        direction = "float",
+        stopinsert = "auto",
+        keep_one = true,
     },
 
     runners = {
+        go = "nvim-test.runners.go-test",
         python = "nvim-test.runners.pyunit"
     }
 }
