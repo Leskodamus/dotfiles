@@ -91,5 +91,3 @@ map('n', '<leader>do', function() require('dap').step_over() end)
 map('n', '<leader>di', function() require('dap').step_into() end)
 map('n', '<leader>db', function() require('dap').step_out() end)
 
--- Format with lsp
-map("n", "<leader>w", vim.lsp.buf.format)
