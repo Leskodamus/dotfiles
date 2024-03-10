@@ -19,6 +19,7 @@ require('paq') {
     -- Debugging tools
     'mfussenegger/nvim-dap';
     'mfussenegger/nvim-dap-python';
+    'leoluz/nvim-dap-go';
     'rcarriga/nvim-dap-ui';
     'folke/neodev.nvim';
     'theHamsta/nvim-dap-virtual-text';

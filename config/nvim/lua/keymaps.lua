@@ -66,9 +66,10 @@ map('n', '<leader>ss', ':setlocal spell!<CR>')
 map('n', '<leader><space>', ':Telescope file_browser<CR>', { silent = true })
 map('n', '<leader>.', ':Telescope file_browser hidden=true<CR>', { silent = true })
 map('n', '<leader>f', ':Telescope find_files<CR>', { silent = true })
-map('n', '<leader>h', ':Telescope find_files  hidden=true<CR>', { silent = true })
+map('n', '<leader>fa', ':Telescope find_files hidden=true<CR>', { silent = true })
 map('n', '<leader>/', ':Telescope live_grep<CR>', { silent = true })
 map('n', '<leader>?', ':Telescope buffers<CR>', { silent = true })
+map('n', '<leader>vad', ':Telescope diagnostics<CR>', { silent = true })
 
 -- Close buffer
 map('n', '<leader>q', ':bd<CR>', { silent = true })
@@ -90,3 +91,5 @@ map('n', '<leader>do', function() require('dap').step_over() end)
 map('n', '<leader>di', function() require('dap').step_into() end)
 map('n', '<leader>db', function() require('dap').step_out() end)
 
+-- Format with lsp
+map("n", "<leader>w", vim.lsp.buf.format)

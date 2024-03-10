@@ -16,20 +16,20 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
-    vim.api.nvim_create_autocmd("CursorHold", {
-        buffer = bufnr,
-        callback = function()
-            local diagnostic_opts = {
-                focusable = false,
-                close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-                border = 'rounded',
-                source = 'always',
-                prefix = ' ',
-                scope = 'cursor',
-            }
-            vim.diagnostic.open_float(nil, diagnostic_opts)
-        end
-    })
+    -- vim.api.nvim_create_autocmd("CursorHold", {
+    --     buffer = bufnr,
+    --     callback = function()
+    --         local diagnostic_opts = {
+    --             focusable = false,
+    --             close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+    --             border = 'rounded',
+    --             source = 'always',
+    --             prefix = ' ',
+    --             scope = 'cursor',
+    --         }
+    --         vim.diagnostic.open_float(nil, diagnostic_opts)
+    --     end
+    -- })
 end)
 
 -- LSP languages
