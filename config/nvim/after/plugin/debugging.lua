@@ -20,4 +20,4 @@ require("neodev").setup({
 require('dapui').setup()
 require('nvim-dap-virtual-text').setup()
 require('dap-python').setup()
-
+require('dap-go').setup()
