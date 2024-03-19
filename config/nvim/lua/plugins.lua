@@ -18,11 +18,12 @@ require('paq') {
     'klen/nvim-test';
     -- Debugging tools
     'mfussenegger/nvim-dap';
+    'nvim-neotest/nvim-nio';
+    'rcarriga/nvim-dap-ui';
+    'theHamsta/nvim-dap-virtual-text';
     'mfussenegger/nvim-dap-python';
     'leoluz/nvim-dap-go';
-    'rcarriga/nvim-dap-ui';
     'folke/neodev.nvim';
-    'theHamsta/nvim-dap-virtual-text';
     -- Neotree file browser
     'nvim-neo-tree/neo-tree.nvim';
     'MunifTanjim/nui.nvim';
