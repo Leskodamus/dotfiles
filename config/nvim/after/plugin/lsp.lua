@@ -46,7 +46,7 @@ require('mason-lspconfig').setup({
         'html',
         'cssls',
         'jsonls',
-        'tsserver',
+        'ts_ls',
         'lua_ls',
         'marksman',
         'intelephense',
