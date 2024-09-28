@@ -14,7 +14,7 @@ exec --no-startup-id dex --autostart --environment i3
 # Autostart applications (if possible use .desktop files with dex instead)
 exec --no-startup-id /bin/dunst
 exec --no-startup-id /bin/nm-applet
-exec --no-startup-id /bin/xwallpaper --zoom ~/wallpaper/wallhaven-85o57o.jpg
+exec --no-startup-id /bin/xwallpaper --zoom ~/wallpaper/xalatath.jpg
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -24,22 +24,22 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # Change mod key
-bindsym Control+Mod1+m exec ~/.config/i3/i3_change_mod
+bindsym Control+Mod1+m exec ~/.local/bin/i3_change_mod
 
 # Start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec kitty
 
 # Rofi window switcher
-bindsym Mod1+Tab exec rofi -show window
+bindsym Mod4+Tab exec rofi -show window
 
 # Open file manager (nnn)
-bindsym $mod+e exec urxvt -e nnn
+bindsym $mod+e exec kitty -e nnn
 
 # Kill focused window
 bindsym $mod+Shift+q kill
 
 # Screenshot
-bindsym --release Print exec "flameshot gui"
+bindsym $mod+s exec "flameshot gui"
 
 # Application launcher
 bindsym $mod+d exec "rofi -modi drun,run -show drun"
@@ -139,34 +139,34 @@ bindsym Mod1+Control+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes, exit i3
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {
-        # Pressing left will shrink the window’s width.
-        bindsym Left resize shrink width 10 px or 10 ppt
-        # Pressing right will grow the window’s width.
-        bindsym Right resize grow width 10 px or 10 ppt
-        # Pressing up will shrink the window’s height.
-        bindsym Up resize shrink height 10 px or 10 ppt
-        # Pressing down will grow the window’s height.
-        bindsym Down resize grow height 10 px or 10 ppt
+    # Pressing left will shrink the window’s width.
+    bindsym Left resize shrink width 10 px or 10 ppt
+    # Pressing right will grow the window’s width.
+    bindsym Right resize grow width 10 px or 10 ppt
+    # Pressing up will shrink the window’s height.
+    bindsym Up resize shrink height 10 px or 10 ppt
+    # Pressing down will grow the window’s height.
+    bindsym Down resize grow height 10 px or 10 ppt
 
-        # Same logic but with vi-like keybinds
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow width 10 px or 10 ppt
-        bindsym h resize shrink height 10 px or 10 ppt
-        bindsym l resize grow height 10 px or 10 ppt
+    # Same logic but with vi-like keybinds
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow width 10 px or 10 ppt
+    bindsym h resize shrink height 10 px or 10 ppt
+    bindsym l resize grow height 10 px or 10 ppt
 
-        # Back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    # Back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar and i3status
 bar {
-    status_command ~/.config/i3/i3status_custom
+    status_command ~/.local/bin/i3status_custom
 	position bottom
 	tray_output primary
-	font pango:FiraCode Mono 10
+	font pango:FiraCode 10
 }
 
