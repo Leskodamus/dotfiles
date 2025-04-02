@@ -1,20 +1,26 @@
 # Display configuration
 output DP-1 {
    mode 1920x1080@144Hz
+   pos 0 0
 }
 
 output HDMI-A-1 {
    mode 1920x1080@60Hz
+   pos 1920 0
 }
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # Mod key
 set $mod Mod4
 
 # Font
 font pango:FiraCode 8
+
+# Enable num lock
+input type:keyboard xkb_numlock enabled
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -111,6 +117,10 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# Set default workspaces per display
+workspace 1 output DP-1
+workspace 2 output HDMI-A-1
+
 # Switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -172,7 +182,4 @@ bindsym $mod+r mode "resize"
 bar {
     swaybar_command waybar
 }
-
-# flameshot multi monitor fix
-# for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 
