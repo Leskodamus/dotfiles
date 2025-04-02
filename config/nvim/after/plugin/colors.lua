@@ -1,8 +1,6 @@
 -- Colorscheme
 
-require('rose-pine').setup({
-    disable_background = false,
-})
+require('catppuccin').setup({})
 
-vim.cmd.colorscheme('rose-pine')
+vim.cmd.colorscheme('catppuccin')
 

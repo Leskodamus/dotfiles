@@ -1,7 +1,7 @@
 -- Treesitter syntax highlighting
 
 require('nvim-treesitter.configs').setup {
-    -- A list of parser names, or "all" (the five listed parsers should always be installed)
+    -- A list of parser names, or "all"
     ensure_installed = {
         "markdown",
         "javascript",
@@ -19,6 +19,9 @@ require('nvim-treesitter.configs').setup {
         "json",
         "latex",
         "python",
+        "bash",
+        "c_sharp",
+        "zig",
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)

@@ -71,6 +71,12 @@ map('n', '<leader>/', ':Telescope live_grep<CR>', { silent = true })
 map('n', '<leader>?', ':Telescope buffers<CR>', { silent = true })
 map('n', '<leader>vad', ':Telescope diagnostics<CR>', { silent = true })
 
+map('n', 'cd', ':Telescope lsp_definitions<CR>', { silent = true })
+map('n', 'cr', ':Telescope lsp_references<CR>', { silent = true })
+map('n', 'ci', ':Telescope lsp_implementations<CR>', { silent = true })
+map('n', '<C-j>', ':Telescope lsp_document_symbols<CR>', { silent = true })
+map('n', '<C-k>', ':lua vim.lsp.buf.signature_help()<CR>', { silent = true })
+
 -- Close buffer
 map('n', '<leader>q', ':bd<CR>', { silent = true })
 

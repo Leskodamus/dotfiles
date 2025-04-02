@@ -46,6 +46,6 @@ require('paq') {
     'hrsh7th/cmp-vsnip';
     'hrsh7th/vim-vsnip';
     -- Themes
-    {'rose-pine/neovim', as = 'rose-pine'};
+    { 'catppuccin/nvim', as = 'catppuccin' };
 }
 
