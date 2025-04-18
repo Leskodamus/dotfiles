@@ -18,10 +18,10 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.scrolloff = 4
 vim.opt.matchtime = 2
 vim.opt.linebreak = true
+vim.opt.breakindent = true
 vim.opt.textwidth = 500
 vim.opt.whichwrap.extends = '<,>,h,l'
 vim.opt.listchars.extends = 'space:·'
 vim.opt.splitbelow = true
 vim.o.updatetime = 250
-vim.o.wrap = false
-
+vim.o.wrap = true
